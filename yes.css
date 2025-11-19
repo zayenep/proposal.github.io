@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background: #ff2b95;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    font-size: 32px;
+    text-shadow: 0 0 10px #ff2b95;
+}
+
+/* Heart shape using CSS */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color);
+    transform: rotate(45deg);
+    animation: explode 1.8s ease-out infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+/* Explosion movement */
+@keyframes explode {
+    0% {
+        transform: translate(0,0) scale(0.3) rotate(45deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.8) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Direction + colors + animation delay */
+.h1 { --x: 100px; --y: -120px; --color:#ff4d88; animation-delay: 0s; }
+.h2 { --x: -120px; --y: -100px; --color:#ff2b95; animation-delay: 0.2s; }
+.h3 { --x: 130px; --y: 80px; --color:#ff77b4; animation-delay: 0.4s; }
+.h4 { --x: -140px; --y: 90px; --color:#ff94c9; animation-delay: 0.6s; }
+.h5 { --x: 0px; --y: -150px; --color:#ff5fa3; animation-delay: 0.8s; }
+.h6 { --x: 160px; --y: 0px; --color:#ff2b95; animation-delay: 1s; }
+.h7 { --x: -160px; --y: 0px; --color:#ff4d88; animation-delay: 1.2s; }
+.h8 { --x: 0px; --y: 160px; --color:#ff6bb1; animation-delay: 1.4s; }
